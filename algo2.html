@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+  
+    // Passo 1: Ler a entrada do usuário
+    const numCarrosVendidos = parseInt(prompt("Digite o número de carros vendidos:"));
+    const valorTotalVendas = parseFloat(prompt("Digite o valor total das vendas:"));
+    const salarioFixo = parseFloat(prompt("Digite o salário fixo:"));
+    const comissaoPorCarro = parseFloat(prompt("Digite a comissão por carro vendido:"));
+    
+    // Passo 2: Calcular a comissão com base em 5% do valor total de vendas
+    const comissaoVendas = valorTotalVendas * 0.05;
+    
+    // Passo 3: Calcular o total de ganhos com as vendas de carros (comissão por carro * número de carros vendidos)
+    const ganhosVendasCarros = comissaoPorCarro * numCarrosVendidos;
+    
+    // Passo 4: Calcular o salário final somando o salário fixo, ganhos com vendas de carros e comissão das vendas totais
+    const salarioFinal = salarioFixo + ganhosVendasCarros + comissaoVendas;
+    
+    // Passo 5: Exibir o salário final
+    console.log(`O salário final do vendedor é: R$${salarioFinal.toFixed(2)}`);
+    
+    </script>
+</html>

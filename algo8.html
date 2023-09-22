@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+
+// Inicializa um array para armazenar os nomes
+const nomes = [];
+
+// Lê e armazena os nomes de 10 pessoas
+for (let i = 1; i <= 10; i++) {
+  const nome = prompt(`Digite o nome #${i}:`);
+  nomes.push(nome);
+}
+
+// Lê o nome a ser pesquisado
+const nomeBusca = prompt("Digite um nome para pesquisar:");
+
+// Verifica se o nome de busca está entre os nomes armazenados
+let encontrado = false;
+for (const nome of nomes) {
+  if (nome === nomeBusca) {
+    encontrado = true;
+    break; // Sai do loop assim que encontrar uma correspondência
+  }
+}
+
+// Exibe o resultado
+if (encontrado) {
+  console.log("ENCONTREI");
+} else {
+  console.log("NÃO ENCONTREI");
+}
+
+
+  </script>
+</html>

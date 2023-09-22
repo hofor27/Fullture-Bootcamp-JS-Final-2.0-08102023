@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+
+// Inicializa variáveis
+const numAlunos = parseInt(prompt("Digite o número de alunos:"));
+const matrizNotas = [];
+
+let aprovadosCount = 0;
+let reprovadosCount = 0;
+
+// Lê as notas e calcula as médias
+for (let aluno = 1; aluno <= numAlunos; aluno++) {
+  const notas = [];
+  let totalPontos = 0;
+
+  for (let i = 1; i <= 4; i++) {
+    const nota = parseFloat(
+      prompt(`Digite a nota ${i} para o Aluno ${aluno} (0 a 10):`)
+    );
+
+    // Valida a nota para estar entre 0 e 10
+    if (nota < 0 || nota > 10 || isNaN(nota)) {
+      console.log(
+        `Nota inválida para o Aluno ${aluno}. Por favor, digite uma nota entre 0 e 10.`
+      );
+      i--; // Decrementa i para re-entrar a nota inválida
+      continue;
+    }
+
+    notas.push(nota);
+    totalPontos += nota;
+  }
+
+  const media = totalPontos / 4;
+  matrizNotas.push({ aluno, media });
+
+  // Verifica se o aluno foi aprovado ou reprovado
+  if (media >= 6) {
+    console.log(
+      `Aluno ${aluno} aprovado com média ${media.toFixed(2)}`
+    );
+    aprovadosCount++;
+  } else {
+    console.log(
+      `Aluno ${aluno} reprovado com média ${media.toFixed(2)}`
+    );
+    reprovadosCount++;
+  }
+}
+
+// Calcula a porcentagem de alunos aprovados
+const porcentagemAprovados = (aprovadosCount / numAlunos) * 100;
+
+// Exibe o resumo
+console.log(`\nResumo:`);
+console.log(`Número de Alunos Aprovados: ${aprovadosCount}`);
+console.log(`Número de Alunos Reprovados: ${reprovadosCount}`);
+console.log(`Porcentagem de Alunos Aprovados: ${porcentagemAprovados.toFixed(2)}%`);
+
+
+  </script>
+</html>

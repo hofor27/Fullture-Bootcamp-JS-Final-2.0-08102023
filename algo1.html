@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+  
+  // Passo 1: Ler o custo de fábrica do carro do usuário
+    const custoFabrica = parseFloat(prompt("Digite o custo de fábrica do carro:"));
+    
+    // Passo 2: Definir a porcentagem do distribuidor e a taxa de impostos
+    const porcentagemDistribuidor = 0.28; // 28%
+    const taxaImpostos = 0.45; // 45%
+    
+    // Passo 3: Calcular o custo do distribuidor (28% do custo de fábrica)
+    const custoDistribuidor = custoFabrica * porcentagemDistribuidor;
+    
+    // Passo 4: Calcular os impostos (45% do custo de fábrica)
+    const impostos = custoFabrica * taxaImpostos;
+    
+    // Passo 5: Calcular o custo final para o consumidor (custo de fábrica + custo do distribuidor + impostos)
+    const custoFinal = custoFabrica + custoDistribuidor + impostos;
+    
+    // Passo 6: Exibir o custo final para o consumidor
+    console.log(`O custo final para o consumidor é: R$${custoFinal.toFixed(2)}`);
+    
+    </script>
+</html>

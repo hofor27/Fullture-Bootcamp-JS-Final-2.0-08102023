@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+
+// Inicializa uma variável para controlar se deve continuar ou não
+let continuarCalculos = true;
+
+// Cria um loop para continuar até que o professor decida parar
+while (continuarCalculos) {
+  // Inicializa variáveis para armazenar as notas
+  let primeiraNota, segundaNota;
+
+  // Lê e valida a primeira nota
+  do {
+    primeiraNota = parseFloat(
+      prompt("Digite a nota da 1ª avaliação (0 a 10):")
+    );
+  } while (isNaN(primeiraNota) || primeiraNota < 0 || primeiraNota > 10);
+
+  // Lê e valida a segunda nota
+  do {
+    segundaNota = parseFloat(
+      prompt("Digite a nota da 2ª avaliação (0 a 10):")
+    );
+  } while (isNaN(segundaNota) || segundaNota < 0 || segundaNota > 10);
+
+  // Calcula a média simples
+  const media = (primeiraNota + segundaNota) / 2;
+
+  // Exibe a média para o aluno atual
+  console.log(`A média da nota deste aluno é: ${media.toFixed(2)}`);
+
+  // Pergunta se o professor deseja continuar
+  const resposta = prompt(
+    "Deseja calcular a média para outro aluno? (SIM/NÃO)"
+  ).toUpperCase();
+  if (resposta !== "SIM") {
+    continuarCalculos = false;
+  }
+}
+
+console.log("Obrigado por usar a ferramenta de cálculo de notas.");
+
+
+
+  </script>
+</html>

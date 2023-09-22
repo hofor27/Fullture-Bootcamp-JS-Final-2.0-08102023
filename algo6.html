@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+
+// Inicializa as variáveis
+let pesoTotal = 0;
+let maiorAltura = -Infinity;
+let menorAltura = Infinity;
+let contador = 0;
+
+// Lê o peso inicial
+let peso = parseFloat(prompt("Digite o peso em quilogramas (0 para encerrar):"));
+
+// Continua lendo e processando os dados até que o peso seja 0
+while (peso !== 0) {
+  // Lê a altura em metros
+  const altura = parseFloat(prompt("Digite a altura em metros:"));
+
+  // Atualiza o peso total
+  pesoTotal += peso;
+
+  // Atualiza a maior e menor altura
+  if (altura > maiorAltura) {
+    maiorAltura = altura;
+  }
+  if (altura < menorAltura) {
+    menorAltura = altura;
+  }
+
+  // Incrementa a contagem de pessoas
+  contador++;
+
+  // Lê o próximo peso
+  peso = parseFloat(prompt("Digite o peso em quilogramas (0 para encerrar):"));
+}
+
+// Calcula o peso médio
+const pesoMedio = pesoTotal / contador;
+
+// Exibe os resultados
+console.log(`Maior Altura: ${maiorAltura} metros`);
+console.log(`Menor Altura: ${menorAltura} metros`);
+console.log(`Peso Médio: ${pesoMedio.toFixed(2)} quilogramas`);
+
+
+  </script>
+</html>

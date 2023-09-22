@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+
+// Passo 1: Ler a entrada do usuário
+const quantidadeAtual = parseInt(prompt("Digite a quantidade atual em estoque:"));
+const quantidadeMaxima = parseInt(prompt("Digite a quantidade máxima em estoque:"));
+const quantidadeMinima = parseInt(prompt("Digite a quantidade mínima em estoque:"));
+
+// Passo 2: Calcular a quantidade média
+const quantidadeMedia = (quantidadeMaxima + quantidadeMinima) / 2;
+
+// Passo 3: Verificar se a quantidade atual é maior ou igual à quantidade média
+if (quantidadeAtual >= quantidadeMedia) {
+  console.log("Não efetuar compra");
+} else {
+  console.log("Efetuar compra");
+}
+
+  </script>
+</html>

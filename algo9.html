@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+
+// Inicializa arrays para armazenar os dados
+const generos = [];
+const alturas = [];
+
+// Variáveis para cálculos
+let maiorAltura = -Infinity;
+let alturaTotalMulheres = 0;
+let numHomens = 0;
+let menorAlturaHomens = Infinity;
+
+// Lê e armazena os dados até a altura ser zero
+while (true) {
+  // Lê o gênero e converte para maiúsculas para consistência
+  const genero = prompt("Digite o gênero (M ou F):").toUpperCase();
+
+  // Sai do loop se a altura for zero
+  const altura = parseFloat(prompt("Digite a altura em metros (0 para encerrar):"));
+  if (altura === 0) {
+    break;
+  }
+
+  // Armazena o gênero e a altura
+  generos.push(genero);
+  alturas.push(altura);
+
+  // Calcula a maior altura reportada
+  if (altura > maiorAltura) {
+    maiorAltura = altura;
+  }
+
+  // Calcula a altura média das mulheres
+  if (genero === "F") {
+    alturaTotalMulheres += altura;
+  }
+
+  // Conta o número de homens e encontra a menor altura entre os homens
+  if (genero === "M") {
+    numHomens++;
+    if (altura < menorAlturaHomens) {
+      menorAlturaHomens = altura;
+    }
+  }
+}
+
+// Calcula a altura média das mulheres
+const alturaMediaMulheres =
+  alturaTotalMulheres / generos.filter((g) => g === "F").length;
+
+// Exibe os resultados
+console.log(`Maior Altura: ${maiorAltura} metros`);
+console.log(`Altura Média das Mulheres: ${alturaMediaMulheres.toFixed(2)} metros`);
+console.log(`Número de Homens: ${numHomens}`);
+console.log(`Menor Altura Entre os Homens: ${menorAlturaHomens} metros`);
+
+  </script>
+</html>

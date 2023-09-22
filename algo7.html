@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+
+// Inicializa um array para armazenar os números
+const numeros = [];
+
+// Lê cinco inteiros e os armazena no array
+for (let i = 0; i < 5; i++) {
+  const num = parseInt(prompt(`Digite o inteiro #${i + 1}:`));
+  numeros.push(num);
+}
+
+// Encontra os maiores e menores números
+let maior = numeros[0];
+let menor = numeros[0];
+let soma = 0;
+
+for (const num of numeros) {
+  // Encontra o maior número
+  if (num > maior) {
+    maior = num;
+  }
+
+  // Encontra o menor número
+  if (num < menor) {
+    menor = num;
+  }
+
+  // Calcula a soma
+  soma += num;
+}
+
+// Exibe os resultados
+console.log(`Maior número: ${maior}`);
+console.log(`Menor número: ${menor}`);
+console.log(`Soma dos números: ${soma}`);
+
+
+  </script>
+</html>
